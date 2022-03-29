@@ -1,7 +1,9 @@
 <template>
   <div id="app-vue-child">
     <div style="margin: 10px">当前数字{{ childCount }}</div>
-    <button @click="changeCount">数字加一</button>
+    <div>
+      <button @click="changeCount">数字加一</button>
+    </div>
     <router-link to="/">加载首页</router-link>
 
     <router-link to="/testPage">加载测试页</router-link>
@@ -14,15 +16,16 @@ export default {
   name: "App",
   computed: {
     childCount() {
-      return this.$store.state.childCount;
+      return this.$propStore.state.count;
     },
   },
   methods: {
     changeCount() {
-      this.$setGlobalState &&
-        this.$setGlobalState({
-          count: this.childCount + 1,
-        });
+      // this.$setGlobalState &&
+      //   this.$setGlobalState({
+      //     count: this.childCount + 1,
+      //   });
+      this.$propStore.commit("changeCount", this.$propStore.state.count + 1);
     },
   },
 };

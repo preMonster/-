@@ -9,11 +9,12 @@ Vue.config.productionTip = false;
 
 let instance = null;
 function render(props = {}) {
-  const { container } = props;
+  const { container, propStore } = props;
 
   Vue.use({
     install: function (Vue) {
       Vue.prototype.$setGlobalState = setGlobalState;
+      Vue.prototype.$propStore = propStore;
     },
   });
 

@@ -1,9 +1,14 @@
+import store from "@/store";
+
 const apps = [
   {
     name: "vueApp",
     entry: "//localhost:10002",
     container: "#container",
     activeRule: "/app-vue",
+    props: {
+      propStore: store,
+    },
   },
   {
     name: "reactApp",
