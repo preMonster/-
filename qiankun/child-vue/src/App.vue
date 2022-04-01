@@ -16,16 +16,15 @@ export default {
   name: "App",
   computed: {
     childCount() {
-      return this.$propStore.state.count;
+      return this.$store.state.childCount;
     },
   },
   methods: {
     changeCount() {
-      // this.$setGlobalState &&
-      //   this.$setGlobalState({
-      //     count: this.childCount + 1,
-      //   });
-      this.$propStore.commit("changeCount", this.$propStore.state.count + 1);
+      this.$setGlobalState &&
+        this.$setGlobalState({
+          count: this.childCount + 1,
+        });
     },
   },
 };
