@@ -7,7 +7,7 @@
      -->
     <micro-app
       name="static-app"
-      url="http://localhost:8082/"
+      url="http://localhost:8081/"
       baseroute="/static-page"
       destroy
       @created="created"
