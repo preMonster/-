@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>子集组件！</h1>
+    <h2>{{ msg }}</h2>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -97,6 +98,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.hello {
+  text-align: center;
+}
 h3 {
   margin: 40px 0 0;
 }
